@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "College API",
-    "description": "College API for Campus... Base URL: https://superbootcamp-nodejs-2024-gamma.vercel.app",
+    "description": "College API for Campus... Base URL: https://superbootcamp-nodejs-2024-eight.vercel.app",
     "version": "1.0.0"
   },
   "paths": {
