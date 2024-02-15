@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "College API",
-    "description": "Description",
+    "description": "Deploying College API",
     "version": "1.0.0"
   },
   "servers": [
@@ -563,7 +563,7 @@
       "post": {
         "description": "Register user",
         "tags": [
-          "Authentication"
+          "Auth"
         ],
         "responses": {
           "200": {
@@ -599,7 +599,7 @@
       "post": {
         "description": "Login for admin",
         "tags": [
-          "Authentication"
+          "Auth"
         ],
         "responses": {
           "200": {
