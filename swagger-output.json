@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "superbootcamp-nodejs-2024-eight.vercel.app"
+      "url": "localhost:8000"
     }
   ],
   "tags": [
