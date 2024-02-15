@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "localhost:8000"
+      "url": "superbootcamp-nodejs-2024-eight.vercel.app"
     }
   ],
   "tags": [
@@ -35,7 +35,7 @@
   "paths": {
     "/api/v1/mahasiswa/{id}": {
       "get": {
-        "description": "",
+        "description": "Get mahasiswa data by id",
         "tags": [
           "Mahasiswa"
         ],
@@ -56,7 +56,10 @@
         }
       },
       "patch": {
-        "description": "",
+        "description": "Edit/update mahasiswa data",
+        "tags": [
+          "Mahasiswa"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -91,7 +94,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete mahasiswa data",
+        "tags": [
+          "Mahasiswa"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -111,7 +117,10 @@
     },
     "/api/v1/mahasiswa": {
       "post": {
-        "description": "",
+        "description": "Create mahasiswa data",
+        "tags": [
+          "Mahasiswa"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -138,7 +147,10 @@
     },
     "/api/v1/dosen/{id}": {
       "get": {
-        "description": "",
+        "description": "Get dosen data by id",
+        "tags": [
+          "Dosen"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -156,7 +168,10 @@
         }
       },
       "patch": {
-        "description": "",
+        "description": "Edit/update dosen data",
+        "tags": [
+          "Dosen"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -185,7 +200,7 @@
                     "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "any"
+                    "example": "integer"
                   }
                 }
               }
@@ -194,7 +209,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete dosen data",
+        "tags": [
+          "Dosen"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -214,7 +232,10 @@
     },
     "/api/v1/dosen/{id}/mahasiswa": {
       "get": {
-        "description": "",
+        "description": "Get mahasiswa taught by a specific dosen",
+        "tags": [
+          "Dosen"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -234,7 +255,10 @@
     },
     "/api/v1/dosen": {
       "post": {
-        "description": "",
+        "description": "Add dosen data",
+        "tags": [
+          "Dosen"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -253,7 +277,7 @@
                     "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "any"
+                    "example": "integer"
                   }
                 }
               }
@@ -264,7 +288,10 @@
     },
     "/api/v1/mata-kuliah": {
       "get": {
-        "description": "",
+        "description": "Get all mata kuliah",
+        "tags": [
+          "Mata Kuliah"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -272,7 +299,10 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Add mata kuliah",
+        "tags": [
+          "Mata Kuliah"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -299,7 +329,10 @@
     },
     "/api/v1/mata-kuliah/{id}": {
       "get": {
-        "description": "",
+        "description": "Get mata kuliah data by id",
+        "tags": [
+          "Mata Kuliah"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -317,7 +350,10 @@
         }
       },
       "patch": {
-        "description": "",
+        "description": "Edit/update mata kuliah data",
+        "tags": [
+          "Mata Kuliah"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -352,7 +388,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete mata kuliah data",
+        "tags": [
+          "Mata Kuliah"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -372,7 +411,10 @@
     },
     "/api/v1/nilai": {
       "post": {
-        "description": "",
+        "description": "Add nilai as logged in user",
+        "tags": [
+          "Nilai"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -423,7 +465,10 @@
     },
     "/api/v1/nilai/{id}": {
       "patch": {
-        "description": "",
+        "description": "Edit nilai data",
+        "tags": [
+          "Nilai"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -480,7 +525,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete nilai data",
+        "tags": [
+          "Nilai"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -513,7 +561,10 @@
     },
     "/api/v1/register": {
       "post": {
-        "description": "",
+        "description": "Register user",
+        "tags": [
+          "Authentication"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -546,7 +597,10 @@
     },
     "/api/v1/login": {
       "post": {
-        "description": "",
+        "description": "Login for admin",
+        "tags": [
+          "Authentication"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -570,16 +624,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/v1/mahasiswa/{id{where:{id:parseInt(mahasiswaId)}": {
-      "delete": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
           }
         }
       }
