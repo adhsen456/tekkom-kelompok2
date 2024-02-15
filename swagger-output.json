@@ -2,13 +2,43 @@
   "openapi": "3.0.0",
   "info": {
     "title": "College API",
-    "description": "College API for Campus... Base URL: https://superbootcamp-nodejs-2024-eight.vercel.app",
+    "description": "Description",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "localhost:8000"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "This section is about APIs for authentication"
+    },
+    {
+      "name": "Mahasiswa",
+      "description": "This section is about APIs for mahasiswa endpoint"
+    },
+    {
+      "name": "Dosen",
+      "description": "This section is about APIs for dosen endpoint"
+    },
+    {
+      "name": "Mata Kuliah",
+      "description": "This section is about APIs for mata kuliah endpoint"
+    },
+    {
+      "name": "Nilai",
+      "description": "This section is about APIs for nilai endpoint"
+    }
+  ],
   "paths": {
     "/api/v1/mahasiswa/{id}": {
       "get": {
-        "description": "Get mahasiswa data by id",
+        "description": "",
+        "tags": [
+          "Mahasiswa"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -26,7 +56,7 @@
         }
       },
       "patch": {
-        "description": "Edit/update mahasiswa name",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -52,7 +82,7 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "edit_mahasiswa_name_here"
+                    "example": "any"
                   }
                 }
               }
@@ -61,7 +91,7 @@
         }
       },
       "delete": {
-        "description": "Delete mahasiswa data",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -81,7 +111,7 @@
     },
     "/api/v1/mahasiswa": {
       "post": {
-        "description": "Add mahasiswa data",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -97,7 +127,7 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "add_mahasiswa_name"
+                    "example": "any"
                   }
                 }
               }
@@ -108,7 +138,7 @@
     },
     "/api/v1/dosen/{id}": {
       "get": {
-        "description": "Get dosen data by id",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -126,7 +156,7 @@
         }
       },
       "patch": {
-        "description": "Edit/update dosen data",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -152,10 +182,10 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "edit_dosen_name_here"
+                    "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "edit_mata_kuliah_id_here"
+                    "example": "any"
                   }
                 }
               }
@@ -164,7 +194,7 @@
         }
       },
       "delete": {
-        "description": "Delete dosen data",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -184,7 +214,7 @@
     },
     "/api/v1/dosen/{id}/mahasiswa": {
       "get": {
-        "description": "Get all mahasiswa that taught by specific dosen",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -204,7 +234,7 @@
     },
     "/api/v1/dosen": {
       "post": {
-        "description": "Add dosen data here",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -220,10 +250,10 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "add_dosen_name_here"
+                    "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "add_mata_kuliah_id_here"
+                    "example": "any"
                   }
                 }
               }
@@ -234,7 +264,7 @@
     },
     "/api/v1/mata-kuliah": {
       "get": {
-        "description": "Get all mata kuliah data",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -242,7 +272,7 @@
         }
       },
       "post": {
-        "description": "Add mata kuliah",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -258,7 +288,7 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "add_mata_kuliah_name"
+                    "example": "any"
                   }
                 }
               }
@@ -269,7 +299,7 @@
     },
     "/api/v1/mata-kuliah/{id}": {
       "get": {
-        "description": "Get mata kuliah detail by id",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -287,7 +317,7 @@
         }
       },
       "patch": {
-        "description": "Edit mata kuliah",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -313,7 +343,7 @@
                 "type": "object",
                 "properties": {
                   "nama": {
-                    "example": "edit_mata_kuliah_name_here"
+                    "example": "any"
                   }
                 }
               }
@@ -322,7 +352,7 @@
         }
       },
       "delete": {
-        "description": "Delete mata kuliah",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -342,7 +372,7 @@
     },
     "/api/v1/nilai": {
       "post": {
-        "description": "Insert nilai as logged in user",
+        "description": "",
         "parameters": [
           {
             "name": "authorization",
@@ -372,14 +402,17 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "indeks": {
+                    "example": "any"
+                  },
                   "skor": {
-                    "example": "add_skor (integer between 0 to 100 inclusive)"
+                    "example": "any"
                   },
                   "mahasiswa_id": {
-                    "example": "insert_mahasiswa_id"
+                    "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "insert_mata_kuliah_id"
+                    "example": "any"
                   }
                 }
               }
@@ -390,7 +423,7 @@
     },
     "/api/v1/nilai/{id}": {
       "patch": {
-        "description": "Edit nilai here",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -428,14 +461,17 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "indeks": {
+                    "example": "any"
+                  },
                   "skor": {
-                    "example": "edit_skor_here (integer between 0 to 100 inclusive)"
+                    "example": "any"
                   },
                   "mahasiswa_id": {
-                    "example": "edit_mahasiswa_id_here"
+                    "example": "any"
                   },
                   "mata_kuliah_id": {
-                    "example": "edit_mata_kuliah_id_here"
+                    "example": "any"
                   }
                 }
               }
@@ -444,7 +480,7 @@
         }
       },
       "delete": {
-        "description": "Delete nilai here",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -477,7 +513,7 @@
     },
     "/api/v1/register": {
       "post": {
-        "description": "Register admin account to input nilai",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -493,13 +529,13 @@
                 "type": "object",
                 "properties": {
                   "username": {
-                    "example": "add_username_here"
+                    "example": "any"
                   },
                   "email": {
-                    "example": "add_email_here"
+                    "example": "any"
                   },
                   "password": {
-                    "example": "add_password_here"
+                    "example": "any"
                   }
                 }
               }
@@ -510,7 +546,7 @@
     },
     "/api/v1/login": {
       "post": {
-        "description": "Login as admin",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -526,16 +562,34 @@
                 "type": "object",
                 "properties": {
                   "username": {
-                    "example": "insert_username_here"
+                    "example": "any"
                   },
                   "password": {
-                    "example": "insert_password_here"
+                    "example": "any"
                   }
                 }
               }
             }
           }
         }
+      }
+    },
+    "/api/v1/mahasiswa/{id{where:{id:parseInt(mahasiswaId)}": {
+      "delete": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
