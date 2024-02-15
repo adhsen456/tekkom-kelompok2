@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "College API",
-    "description": "Description",
+    "description": "College API for Deployment",
     "version": "1.0.0"
   },
   "servers": [
@@ -438,6 +438,11 @@
             "description": "Forbidden"
           }
         },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -500,6 +505,11 @@
             "description": "Forbidden"
           }
         },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -556,7 +566,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/register": {
