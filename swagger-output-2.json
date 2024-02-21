@@ -5,11 +5,6 @@
     "description": "Documentation for the LaptopIn API",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "/"
-    }
-  ],
   "paths": {
     "/payments": {
       "get": {
@@ -37,6 +32,29 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transactionId": {
+                    "example": "any"
+                  },
+                  "amount": {
+                    "example": "any"
+                  },
+                  "userId": {
+                    "example": "any"
+                  },
+                  "paymentMethod": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -87,6 +105,29 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transactionId": {
+                    "example": "any"
+                  },
+                  "amount": {
+                    "example": "any"
+                  },
+                  "userId": {
+                    "example": "any"
+                  },
+                  "paymentMethod": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -142,6 +183,29 @@
           "500": {
             "description": "Internal Server Error"
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "goodsId": {
+                    "example": "any"
+                  },
+                  "quantity": {
+                    "example": "any"
+                  },
+                  "totalPrice": {
+                    "example": "any"
+                  },
+                  "cartId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -191,6 +255,32 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "goodsId": {
+                    "example": "any"
+                  },
+                  "quantity": {
+                    "example": "any"
+                  },
+                  "totalPrice": {
+                    "example": "any"
+                  },
+                  "cartId": {
+                    "example": "any"
+                  },
+                  "transactionId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -364,6 +454,20 @@
           "500": {
             "description": "Internal Server Error"
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -468,6 +572,26 @@
           "500": {
             "description": "Internal Server Error"
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "any"
+                  },
+                  "totalTransaction": {
+                    "example": "any"
+                  },
+                  "status": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -517,6 +641,26 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "any"
+                  },
+                  "totalTransaction": {
+                    "example": "any"
+                  },
+                  "status": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       },
