@@ -340,7 +340,7 @@
     "/cart": {
       "get": {
         "tags": [
-          "Transaction Detail"
+          "Cart"
         ],
         "description": "",
         "responses": {
@@ -354,7 +354,7 @@
       },
       "post": {
         "tags": [
-          "Transaction Detail"
+          "Cart"
         ],
         "description": "",
         "responses": {
@@ -370,7 +370,7 @@
     "/cart/{id}": {
       "get": {
         "tags": [
-          "Transaction Detail"
+          "Cart"
         ],
         "description": "",
         "parameters": [
@@ -394,7 +394,7 @@
       },
       "patch": {
         "tags": [
-          "Transaction Detail"
+          "Cart"
         ],
         "description": "",
         "parameters": [
@@ -418,7 +418,7 @@
       },
       "delete": {
         "tags": [
-          "Transaction Detail"
+          "Cart"
         ],
         "description": "",
         "parameters": [
@@ -547,6 +547,9 @@
     },
     "/user/{id}/transaction": {
       "get": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "parameters": [
           {
