@@ -115,7 +115,7 @@
         }
       }
     },
-    "/transaction-details": {
+    "/transaction-detail": {
       "get": {
         "tags": [
           "Transaction Detail"
@@ -136,8 +136,8 @@
         ],
         "description": "",
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -145,7 +145,7 @@
         }
       }
     },
-    "/transaction-details/{id}": {
+    "/transaction-detail/{id}": {
       "get": {
         "tags": [
           "Transaction Detail"
@@ -186,6 +186,30 @@
           }
         ],
         "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Transaction Detail"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
           "200": {
             "description": "OK"
           },
@@ -193,7 +217,101 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/cart/{id}/transaction-detail": {
+      "get": {
+        "tags": [
+          "Transaction Detail"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transaction-detail/transaction": {
+      "patch": {
+        "tags": [
+          "Transaction Detail"
+        ],
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transactionId": {
+                    "example": "any"
+                  },
+                  "cartId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction-detail/cart": {
+      "patch": {
+        "tags": [
+          "Transaction Detail"
+        ],
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transactionId": {
+                    "example": "any"
+                  },
+                  "cartId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart/{id}/delete": {
       "delete": {
         "tags": [
           "Transaction Detail"
@@ -222,7 +340,7 @@
     "/cart": {
       "get": {
         "tags": [
-          "Cart"
+          "Transaction Detail"
         ],
         "description": "",
         "responses": {
@@ -236,12 +354,12 @@
       },
       "post": {
         "tags": [
-          "Cart"
+          "Transaction Detail"
         ],
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Created"
           },
           "500": {
             "description": "Internal Server Error"
@@ -250,9 +368,9 @@
       }
     },
     "/cart/{id}": {
-      "patch": {
+      "get": {
         "tags": [
-          "Cart"
+          "Transaction Detail"
         ],
         "description": "",
         "parameters": [
@@ -266,8 +384,32 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Transaction Detail"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -276,7 +418,7 @@
       },
       "delete": {
         "tags": [
-          "Cart"
+          "Transaction Detail"
         ],
         "description": "",
         "parameters": [
@@ -348,6 +490,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -379,6 +524,29 @@
         "tags": [
           "Transaction"
         ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/{id}/transaction": {
+      "get": {
         "description": "",
         "parameters": [
           {
