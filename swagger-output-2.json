@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "be-transaction-laptopin-superbootcamp-2024.vercel.app"
+      "url": "https://be-transaction-laptopin-superbootcamp-2024.vercel.app"
     }
   ],
   "paths": {
