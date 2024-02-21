@@ -5,6 +5,11 @@
     "description": "Documentation for the LaptopIn API",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "be-transaction-laptopin-superbootcamp-2024.vercel.app"
+    }
+  ],
   "paths": {
     "/payments": {
       "get": {
@@ -112,6 +117,9 @@
     },
     "/transaction-details": {
       "get": {
+        "tags": [
+          "Transaction Detail"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -123,6 +131,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Transaction Detail"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -136,6 +147,9 @@
     },
     "/transaction-details/{id}": {
       "get": {
+        "tags": [
+          "Transaction Detail"
+        ],
         "description": "",
         "parameters": [
           {
@@ -157,6 +171,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Transaction Detail"
+        ],
         "description": "",
         "parameters": [
           {
@@ -178,6 +195,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Transaction Detail"
+        ],
         "description": "",
         "parameters": [
           {
@@ -201,6 +221,9 @@
     },
     "/cart": {
       "get": {
+        "tags": [
+          "Cart"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -212,6 +235,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Cart"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -248,6 +274,9 @@
     },
     "/cart/{id}": {
       "patch": {
+        "tags": [
+          "Cart"
+        ],
         "description": "",
         "parameters": [
           {
@@ -292,6 +321,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Cart"
+        ],
         "description": "",
         "parameters": [
           {
@@ -315,6 +347,9 @@
     },
     "/transaction": {
       "get": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -326,6 +361,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -362,6 +400,9 @@
     },
     "/transaction/{id}": {
       "get": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "parameters": [
           {
@@ -380,6 +421,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "parameters": [
           {
@@ -424,6 +468,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Transaction"
+        ],
         "description": "",
         "parameters": [
           {
