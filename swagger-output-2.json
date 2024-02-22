@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "LaptopIn API Transaction Documentation",
-    "description": "Documentation for the LaptopIn Transaction API",
+    "title": "LaptopIn API Documentation",
+    "description": "Documentation for the LaptopIn API",
     "version": "1.0.0"
   },
   "servers": [
@@ -46,12 +46,6 @@
                 "type": "object",
                 "properties": {
                   "transactionId": {
-                    "example": "any"
-                  },
-                  "amount": {
-                    "example": "any"
-                  },
-                  "userId": {
                     "example": "any"
                   },
                   "paymentMethod": {
@@ -366,42 +360,6 @@
         }
       }
     },
-    "/transaction-detail/transaction": {
-      "patch": {
-        "tags": [
-          "Transaction Detail"
-        ],
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "transactionId": {
-                    "example": "any"
-                  },
-                  "cartId": {
-                    "example": "any"
-                  },
-                  "ids": {
-                    "example": "any"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/cart/{id}/delete": {
       "delete": {
         "tags": [
@@ -583,7 +541,7 @@
                   "userId": {
                     "example": "any"
                   },
-                  "totalTransaction": {
+                  "ids": {
                     "example": "any"
                   }
                 }
@@ -663,8 +621,8 @@
         }
       }
     },
-    "/transaction/{id}/{cartId}": {
-      "delete": {
+    "/user/{id}/transaction": {
+      "get": {
         "tags": [
           "Transaction"
         ],
@@ -672,14 +630,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "cartId",
             "in": "path",
             "required": true,
             "schema": {
@@ -697,8 +647,34 @@
         }
       }
     },
-    "/user/{id}/transaction": {
-      "get": {
+    "/transaction/{id}/unpaid": {
+      "delete": {
+        "tags": [
+          "Transaction"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transaction/{id}/force": {
+      "delete": {
         "tags": [
           "Transaction"
         ],
@@ -747,6 +723,9 @@
           "201": {
             "description": "Created"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -757,9 +736,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "transactionId": {
-                    "example": "any"
-                  },
                   "name": {
                     "example": "any"
                   },
@@ -769,10 +745,16 @@
                   "phone": {
                     "example": "any"
                   },
+                  "fullAddress": {
+                    "example": "any"
+                  },
                   "city": {
                     "example": "any"
                   },
                   "postalCode": {
+                    "example": "any"
+                  },
+                  "transactionId": {
                     "example": "any"
                   }
                 }
@@ -826,6 +808,9 @@
           "201": {
             "description": "Created"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -836,9 +821,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "transactionId": {
-                    "example": "any"
-                  },
                   "name": {
                     "example": "any"
                   },
@@ -848,10 +830,16 @@
                   "phone": {
                     "example": "any"
                   },
+                  "fullAddress": {
+                    "example": "any"
+                  },
                   "city": {
                     "example": "any"
                   },
                   "postalCode": {
+                    "example": "any"
+                  },
+                  "transactionId": {
                     "example": "any"
                   }
                 }
