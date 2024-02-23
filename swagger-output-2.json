@@ -11,7 +11,7 @@
     }
   ],
   "paths": {
-    "/payments": {
+    "/payment": {
       "get": {
         "tags": [
           "Payments"
@@ -58,7 +58,7 @@
         }
       }
     },
-    "/payments/{id}": {
+    "/payment/{id}": {
       "get": {
         "tags": [
           "Payments"
@@ -598,26 +598,6 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "userId": {
-                    "example": "any"
-                  },
-                  "totalTransaction": {
-                    "example": "any"
-                  },
-                  "status": {
-                    "example": "any"
-                  }
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -643,6 +623,54 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transaction/{id}/add-address/{addressId}": {
+      "patch": {
+        "tags": [
+          "Transaction"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "addressId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -754,7 +782,7 @@
                   "postalCode": {
                     "example": "any"
                   },
-                  "transactionId": {
+                  "userId": {
                     "example": "any"
                   }
                 }
@@ -837,9 +865,6 @@
                     "example": "any"
                   },
                   "postalCode": {
-                    "example": "any"
-                  },
-                  "transactionId": {
                     "example": "any"
                   }
                 }
