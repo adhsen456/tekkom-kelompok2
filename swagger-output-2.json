@@ -1,15 +1,10 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "LaptopIn API Documentation",
-    "description": "Documentation for the LaptopIn API",
+    "title": "LaptopIn Transaction API Documentation",
+    "description": "Documentation for the LaptopIn Transaction API",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "/"
-    }
-  ],
   "paths": {
     "/payment": {
       "get": {
@@ -177,6 +172,39 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/mitrans-payments": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transaction_details": {
+                    "example": "any"
+                  },
+                  "item_details": {
+                    "example": "any"
+                  },
+                  "customer_details": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -543,6 +571,9 @@
                   },
                   "ids": {
                     "example": "any"
+                  },
+                  "address": {
+                    "example": "any"
                   }
                 }
               }
@@ -751,9 +782,6 @@
           "201": {
             "description": "Created"
           },
-          "422": {
-            "description": "Unprocessable Entity"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -764,6 +792,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "userId": {
+                    "example": "any"
+                  },
                   "name": {
                     "example": "any"
                   },
@@ -780,9 +811,6 @@
                     "example": "any"
                   },
                   "postalCode": {
-                    "example": "any"
-                  },
-                  "userId": {
                     "example": "any"
                   }
                 }
@@ -874,6 +902,32 @@
         }
       },
       "delete": {
+        "tags": [
+          "Address"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/{id}/address": {
+      "get": {
         "tags": [
           "Address"
         ],
