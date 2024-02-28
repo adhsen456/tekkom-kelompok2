@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "LaptopIn Transaction API Documentation",
-    "description": "Documentation for the LaptopIn Transaction API",
+    "title": "LaptopIn API Documentation",
+    "description": "Documentation for the LaptopIn API",
     "version": "1.0.0"
   },
   "paths": {
@@ -178,6 +178,9 @@
     },
     "/mitrans-payments": {
       "post": {
+        "tags": [
+          "Payments"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -864,9 +867,6 @@
           "201": {
             "description": "Created"
           },
-          "422": {
-            "description": "Unprocessable Entity"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -948,6 +948,16 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/{payment{where{id:Number(id)}}": {
+      "delete": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
